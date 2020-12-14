@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+/* Main elements positioning */
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+header {
+  padding-bottom: 0px;
+  padding-top:0px;
+}
+main {
+  padding-top: 5rem;
+  background-color: #594f8f;
+}
+footer {
+  background: #3c1a5b;
+  color:#fff748;
+  padding: 1rem;
+  text-align: right;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+section{
+  padding:1rem;
+}
+/* Expanding elements */
+ .folding {
+  background-color: #2f3c7e;
+  color: #fbeaeb;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius:  15px 15px 0px 0px;
+  font-family: 'Cabin', sans-serif;
+  text-align: left;
+  letter-spacing: 2px;
+  font-size: 35px;
+  font-weight: 700;}
+.folding i { /* Expand/collapse button position */
+  float: right;
+}
+.folding:hover {
+  background-color: #30104e;
+}
+.content {
+  padding: 0 18px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background-color: #f1f1f1;
+  border-radius: 0px 0px 15px 15px;
+  margin-bottom: 10px;
+}
+/* Cards design */
+.container {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, 400px);
+  margin-top:20px;
+  margin-bottom:20px;
+  font-family: "Poppins", sans-serif;
+  color: whitesmoke;
+  text-shadow: #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px,
+             #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px;
+}
+.container .card {
+  background-position-y: top;
+  width: 400px;
+  height:200px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background-repeat: no-repeat;
+  filter: grayscale(100%); /*Default state for transform effects*/
+  border-radius: 9px;
+}
+.container .card h2 {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 48px;
+  font-weight: 700;
+}
+.container .card span {
+  opacity: 0;   /*Default state for transform effects*/
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  font-weight: 500;
+}
+/* Card transformation effects */
+.container .card:hover {
+  filter: grayscale(0);
+}
+.container .card:hover span {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+h2 {
+  pointer-events: none; /*Main card heading does not change*/
+}
+.container .card .lapse span:nth-of-type(1) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.container .card .lapse span:nth-of-type(2) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.container .card .lapse span:nth-of-type(3) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.container .card .lapse span:nth-of-type(4) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+/* Position for container of lapsing words */
+.container .card .lapse {
+  position: absolute;
+  bottom: 100px;
+  left: 10px;
+  height: 50px;
+}
+/* Menu and social networks icons */
+#navbar {
+  background-color: #3c1a5b;
+  display: flex;
+  flex-direction: row;
+  padding-top:10px;
+  position: fixed;/*Menu bar to be fixed on the screen (don't move when page scrolled)*/
+  z-index: 100;/*On top of other elements*/
+  width:100%;
+}
+#navbar div {
+  float: left;
+  text-align: center;
+  padding: 1px 15px 0px;
+  margin-bottom: 10px;  /*to create space below underline of the menu*/
+  border-bottom: 10px solid #3c1a5b; /*invisible bottom border (same color as background*/
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 2px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff748;
+}
+#navbar .menu:hover {
+  border-bottom: 10px solid #fff748; /*underline of the menu item hovered on*/
+}
+#navbar .active {
+  color: white; /*for currently active menu item*/
+}
+.fab{
+  color:#fff748 /*color for social media icons*/
+}
+.fab:hover{
+  color:whitesmoke /*color for social media icons*/
+}
+.social{
+  margin-left: auto; /*allows social icons to be on right side while menu is on the left*/
+}
+.social a{
+  padding-left: 10px; /*space between social icons*/
+}
+.social:hover{
+  float: right;
+  border-bottom: 10px solid #3c1a5b; /*to remove underline when hovered over social icons. Can not use pointer-events:none as it will disable links*/
+}
