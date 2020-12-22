@@ -19,12 +19,13 @@ const containers = [
   ]},
   {name: "Puzzles for my wife",cards:[
     ["Square riddle", "riddle","Displayed 8 squares", "by clicking one", "change color", "of adjusted"],
+    ["Sudoku", "sudoku","Generator", "of sudoku field", "with set", "difficulty"],
   ]},
-  {name: "Work with APIs",cards:[
+  {name: "Other",cards:[
     ["API and Ajax","api","whois IP", "open weather", "world holidays", "Google maps"],
-  ]},
-  {name: "Node.js projects", cards:[
-    ["Crew", "crew","MongoDB", "Node.js", "automatic allocation", "crew positions"],
+    ["Crew Mongo", "crew","MongoDB", "Node.js", "automatic allocation of", "crew positions"],
+    ["Crew", "crew2","Version 2.0", "with more deep", "algorithm and", "current updates"],
+    ["Loaders", "loader","Pure CSS", "different loaders", "some inspired", "by popular brands"],
   ]}
 ]
 const createSocialButtons = ()=>{
